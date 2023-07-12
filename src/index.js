@@ -1,4 +1,8 @@
 import './scss/index.scss';
+import {timerOne} from './js/timer';
+
+// убрать при build!! только для разработки
+import './index.html';
 
 
 let count = 0;
@@ -18,3 +22,9 @@ document.querySelector('.button-importance').addEventListener('click', ({target}
         }
     }
 });
+
+console.log(timerOne);
+console.log(timerOne.increaseCount());
+console.log(timerOne.setName('timer-1'));
+
+
