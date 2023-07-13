@@ -1,8 +1,9 @@
 import './scss/index.scss';
-import {timerOne} from './js/timer';
+import {Task} from './js/task';
 
 // убрать при build!! только для разработки
 import './index.html';
+import {Tomato} from './js/tomato';
 
 
 let count = 0;
@@ -23,8 +24,14 @@ document.querySelector('.button-importance').addEventListener('click', ({target}
     }
 });
 
-console.log(timerOne);
-console.log(timerOne.increaseCount());
-console.log(timerOne.setName('timer-1'));
 
+const taskOne = new Task(1, 'timerOne', 0);
+taskOne.setName('task-1');
 
+const tomato = new Tomato();
+
+tomato.addTask(taskOne);
+tomato.activateTask(taskOne.taskId);
+
+tomato.startTask();
+console.log('tomato: ', tomato);
