@@ -13,6 +13,55 @@ export class Task {
         this.taskName = newName;
         return this;
     }
+
+    getTaskName() {
+        return this.taskName;
+    }
+
+    getTaskId() {
+        return this.taskId();
+    }
+
+    getCount() {
+        return this.count;
+    }
+
+    getImportance() {
+        throw new Error('Not implemented');
+    }
 }
 
-// export const taskOne = new Task(1, 'timerOne', 0);
+export class ImportantTask extends Task {
+    constructor(taskId, taskName, count, importance = 'important') {
+        super(taskId, taskName, count);
+        this.importance = importance;
+    }
+
+    getImportance() {
+        return this.importance;
+    }
+}
+
+export class StandartTask extends Task {
+    constructor(taskId, taskName, count, importance = 'so-so') {
+        super(taskId, taskName, count);
+        this.importance = importance;
+    }
+
+    getImportance() {
+        return this.importance;
+    }
+}
+
+export class NoImportantTask extends Task {
+    constructor(taskId, taskName, count, importance = 'default') {
+        super(taskId, taskName, count);
+        this.importance = importance;
+    }
+
+    getImportance() {
+        return this.importance;
+    }
+}
+
+
